@@ -85,6 +85,7 @@
                     "group": "Docker Deployment",
                     "pages": [
                       "v1.12.x/deployment/docker",
+                      "v1.12.x/deployment/docker/advanced",
                       "v1.12.x/deployment/docker/security",
                       "v1.12.x/deployment/docker/subpath"
                     ]
@@ -94,7 +95,13 @@
                     "pages": [
                       "v1.12.x/deployment/kubernetes",
                       "v1.12.x/deployment/kubernetes/values",
-                      "v1.12.x/deployment/kubernetes/eks",
+                      {
+                        "group": "EKS Deployment",
+                        "pages": [
+                          "v1.12.x/deployment/kubernetes/eks",
+                          "v1.12.x/deployment/kubernetes/eks/airflow"
+                        ]
+                      },
                       "v1.12.x/deployment/kubernetes/gke",
                       "v1.12.x/deployment/kubernetes/aks",
                       "v1.12.x/deployment/kubernetes/on-prem",
@@ -107,7 +114,13 @@
                     "pages": [
                       "v1.12.x/deployment/ingestion",
                       "v1.12.x/deployment/ingestion/openmetadata",
-                      "v1.12.x/deployment/ingestion/kubernetes",
+                      {
+                        "group": "Kubernetes Orchestrator",
+                        "pages": [
+                          "v1.12.x/deployment/ingestion/kubernetes",
+                          "v1.12.x/deployment/ingestion/kubernetes/troubleshooting"
+                        ]
+                      },
                       {
                         "group": "External",
                         "pages": [
@@ -116,7 +129,8 @@
                           "v1.12.x/deployment/ingestion/external/mwaa",
                           "v1.12.x/deployment/ingestion/external/gcp-composer",
                           "v1.12.x/deployment/ingestion/external/github-actions",
-                          "v1.12.x/deployment/ingestion/external/credentials"
+                          "v1.12.x/deployment/ingestion/external/credentials",
+                          "v1.12.x/deployment/ingestion/external/credentials-airflow"
                         ]
                       }
                     ]
@@ -244,9 +258,16 @@
                     "pages": [
                       "v1.12.x/deployment/upgrade",
                       "v1.12.x/deployment/upgrade/how-does-it-work",
-                      "v1.12.x/deployment/upgrade/bare-metal",
+                      {
+                        "group": "Bare Metal Upgrade",
+                        "pages": [
+                          "v1.12.x/deployment/upgrade/bare-metal",
+                          "v1.12.x/deployment/upgrade/bare-metal/steps"
+                        ]
+                      },
                       "v1.12.x/deployment/upgrade/docker",
-                      "v1.12.x/deployment/upgrade/kubernetes"
+                      "v1.12.x/deployment/upgrade/kubernetes",
+                      "v1.12.x/deployment/upgrade/kubernetes-troubleshooting"
                     ]
                   },
                   "v1.12.x/deployment/backup-restore-metadata",
@@ -1101,8 +1122,7 @@
                       }
                     ]
                   },
-                  "v1.12.x/connectors/custom-connectors",
-                  "v1.12.x/connectors/troubleshoot"
+                  "v1.12.x/connectors/custom-connectors"
                 ]
               },
               {
@@ -1124,7 +1144,8 @@
                                 "group": "Filter Patterns",
                                 "pages": [
                                   "v1.12.x/connectors/ingestion/workflows/metadata/filter-patterns",
-                                  "v1.12.x/connectors/ingestion/workflows/metadata/filter-patterns/database"
+                                  "v1.12.x/connectors/ingestion/workflows/metadata/filter-patterns/database",
+                                  "v1.12.x/connectors/ingestion/workflows/metadata/filter-patterns/table"
                                 ]
                               },
                               {
@@ -1203,7 +1224,13 @@
                 "pages": [
                   "v1.12.x/how-to-guides/mcp",
                   "v1.12.x/how-to-guides/mcp/oauth",
-                  "v1.12.x/how-to-guides/mcp/connect",
+                  {
+                    "group": "MCP Server Connection",
+                    "pages": [
+                      "v1.12.x/how-to-guides/mcp/connect",
+                      "v1.12.x/how-to-guides/mcp/connect-api"
+                    ]
+                  },
                   "v1.12.x/how-to-guides/mcp/reference",
                   "v1.12.x/how-to-guides/mcp/claude",
                   "v1.12.x/how-to-guides/mcp/claude-code",
@@ -1921,7 +1948,13 @@
                 "pages": [
                   "v1.12.x/api-reference/sdk",
                   "v1.12.x/api-reference/sdk/openmetadata-standards",
-                  "v1.12.x/api-reference/sdk/go",
+                  {
+                    "group": "Go SDK",
+                    "pages": [
+                      "v1.12.x/api-reference/sdk/go",
+                      "v1.12.x/api-reference/sdk/go-api-methods"
+                    ]
+                  },
                   {
                     "group": "Python",
                     "pages": [
@@ -2246,6 +2279,7 @@
                     "group": "Docker Deployment",
                     "pages": [
                       "v1.11.x/deployment/docker",
+                      "v1.11.x/deployment/docker/advanced",
                       "v1.11.x/deployment/docker/security",
                       "v1.11.x/deployment/docker/subpath"
                     ]
@@ -2255,7 +2289,13 @@
                     "pages": [
                       "v1.11.x/deployment/kubernetes",
                       "v1.11.x/deployment/kubernetes/values",
-                      "v1.11.x/deployment/kubernetes/eks",
+                      {
+                        "group": "EKS Deployment",
+                        "pages": [
+                          "v1.11.x/deployment/kubernetes/eks",
+                          "v1.11.x/deployment/kubernetes/eks/airflow"
+                        ]
+                      },
                       "v1.11.x/deployment/kubernetes/gke",
                       "v1.11.x/deployment/kubernetes/aks",
                       "v1.11.x/deployment/kubernetes/on-prem",
@@ -2277,7 +2317,8 @@
                           "v1.11.x/deployment/ingestion/external/mwaa",
                           "v1.11.x/deployment/ingestion/external/gcp-composer",
                           "v1.11.x/deployment/ingestion/external/github-actions",
-                          "v1.11.x/deployment/ingestion/external/credentials"
+                          "v1.11.x/deployment/ingestion/external/credentials",
+                          "v1.11.x/deployment/ingestion/external/credentials-airflow"
                         ]
                       }
                     ]
@@ -2404,9 +2445,16 @@
                     "pages": [
                       "v1.11.x/deployment/upgrade",
                       "v1.11.x/deployment/upgrade/how-does-it-work",
-                      "v1.11.x/deployment/upgrade/bare-metal",
+                      {
+                        "group": "Bare Metal Upgrade",
+                        "pages": [
+                          "v1.11.x/deployment/upgrade/bare-metal",
+                          "v1.11.x/deployment/upgrade/bare-metal/steps"
+                        ]
+                      },
                       "v1.11.x/deployment/upgrade/docker",
-                      "v1.11.x/deployment/upgrade/kubernetes"
+                      "v1.11.x/deployment/upgrade/kubernetes",
+                      "v1.11.x/deployment/upgrade/kubernetes-troubleshooting"
                     ]
                   },
                   "v1.11.x/deployment/backup-restore-metadata",
@@ -3223,8 +3271,7 @@
                       "v1.11.x/connectors/drive/custom-drive"
                     ]
                   },
-                  "v1.11.x/connectors/custom-connectors",
-                  "v1.11.x/connectors/troubleshoot"
+                  "v1.11.x/connectors/custom-connectors"
                 ]
               },
               {
@@ -3246,7 +3293,8 @@
                                 "group": "Filter Patterns",
                                 "pages": [
                                   "v1.11.x/connectors/ingestion/workflows/metadata/filter-patterns",
-                                  "v1.11.x/connectors/ingestion/workflows/metadata/filter-patterns/database"
+                                  "v1.11.x/connectors/ingestion/workflows/metadata/filter-patterns/database",
+                                  "v1.11.x/connectors/ingestion/workflows/metadata/filter-patterns/table"
                                 ]
                               },
                               {
@@ -3324,7 +3372,13 @@
                 "group": "MCP",
                 "pages": [
                   "v1.11.x/how-to-guides/mcp",
-                  "v1.11.x/how-to-guides/mcp/connect",
+                  {
+                    "group": "MCP Server Connection",
+                    "pages": [
+                      "v1.11.x/how-to-guides/mcp/connect",
+                      "v1.11.x/how-to-guides/mcp/connect-api"
+                    ]
+                  },
                   "v1.11.x/how-to-guides/mcp/reference",
                   "v1.11.x/how-to-guides/mcp/claude",
                   "v1.11.x/how-to-guides/mcp/goose",
@@ -4002,7 +4056,13 @@
                 "pages": [
                   "v1.11.x/api-reference/sdk",
                   "v1.11.x/api-reference/sdk/openmetadata-standards",
-                  "v1.11.x/api-reference/sdk/go",
+                  {
+                    "group": "Go SDK",
+                    "pages": [
+                      "v1.11.x/api-reference/sdk/go",
+                      "v1.11.x/api-reference/sdk/go-api-methods"
+                    ]
+                  },
                   {
                     "group": "Java",
                     "pages": [
@@ -4324,6 +4384,7 @@
                     "group": "Docker Deployment",
                     "pages": [
                       "v1.13.x-SNAPSHOT/deployment/docker",
+                      "v1.13.x-SNAPSHOT/deployment/docker/advanced",
                       "v1.13.x-SNAPSHOT/deployment/docker/security",
                       "v1.13.x-SNAPSHOT/deployment/docker/subpath"
                     ]
@@ -4333,7 +4394,13 @@
                     "pages": [
                       "v1.13.x-SNAPSHOT/deployment/kubernetes",
                       "v1.13.x-SNAPSHOT/deployment/kubernetes/values",
-                      "v1.13.x-SNAPSHOT/deployment/kubernetes/eks",
+                      {
+                        "group": "EKS Deployment",
+                        "pages": [
+                          "v1.13.x-SNAPSHOT/deployment/kubernetes/eks",
+                          "v1.13.x-SNAPSHOT/deployment/kubernetes/eks/airflow"
+                        ]
+                      },
                       "v1.13.x-SNAPSHOT/deployment/kubernetes/gke",
                       "v1.13.x-SNAPSHOT/deployment/kubernetes/aks",
                       "v1.13.x-SNAPSHOT/deployment/kubernetes/on-prem",
@@ -4346,7 +4413,13 @@
                     "pages": [
                       "v1.13.x-SNAPSHOT/deployment/ingestion",
                       "v1.13.x-SNAPSHOT/deployment/ingestion/openmetadata",
-                      "v1.13.x-SNAPSHOT/deployment/ingestion/kubernetes",
+                      {
+                        "group": "Kubernetes Orchestrator",
+                        "pages": [
+                          "v1.13.x-SNAPSHOT/deployment/ingestion/kubernetes",
+                          "v1.13.x-SNAPSHOT/deployment/ingestion/kubernetes/troubleshooting"
+                        ]
+                      },
                       {
                         "group": "External",
                         "pages": [
@@ -4355,7 +4428,8 @@
                           "v1.13.x-SNAPSHOT/deployment/ingestion/external/mwaa",
                           "v1.13.x-SNAPSHOT/deployment/ingestion/external/gcp-composer",
                           "v1.13.x-SNAPSHOT/deployment/ingestion/external/github-actions",
-                          "v1.13.x-SNAPSHOT/deployment/ingestion/external/credentials"
+                          "v1.13.x-SNAPSHOT/deployment/ingestion/external/credentials",
+                          "v1.13.x-SNAPSHOT/deployment/ingestion/external/credentials-airflow"
                         ]
                       }
                     ]
@@ -4483,9 +4557,16 @@
                     "pages": [
                       "v1.13.x-SNAPSHOT/deployment/upgrade",
                       "v1.13.x-SNAPSHOT/deployment/upgrade/how-does-it-work",
-                      "v1.13.x-SNAPSHOT/deployment/upgrade/bare-metal",
+                      {
+                        "group": "Bare Metal Upgrade",
+                        "pages": [
+                          "v1.13.x-SNAPSHOT/deployment/upgrade/bare-metal",
+                          "v1.13.x-SNAPSHOT/deployment/upgrade/bare-metal/steps"
+                        ]
+                      },
                       "v1.13.x-SNAPSHOT/deployment/upgrade/docker",
-                      "v1.13.x-SNAPSHOT/deployment/upgrade/kubernetes"
+                      "v1.13.x-SNAPSHOT/deployment/upgrade/kubernetes",
+                      "v1.13.x-SNAPSHOT/deployment/upgrade/kubernetes-troubleshooting"
                     ]
                   },
                   "v1.13.x-SNAPSHOT/deployment/backup-restore-metadata",
@@ -5348,8 +5429,7 @@
                       }
                     ]
                   },
-                  "v1.13.x-SNAPSHOT/connectors/custom-connectors",
-                  "v1.13.x-SNAPSHOT/connectors/troubleshoot"
+                  "v1.13.x-SNAPSHOT/connectors/custom-connectors"
                 ]
               },
               {
@@ -5371,7 +5451,8 @@
                                 "group": "Filter Patterns",
                                 "pages": [
                                   "v1.13.x-SNAPSHOT/connectors/ingestion/workflows/metadata/filter-patterns",
-                                  "v1.13.x-SNAPSHOT/connectors/ingestion/workflows/metadata/filter-patterns/database"
+                                  "v1.13.x-SNAPSHOT/connectors/ingestion/workflows/metadata/filter-patterns/database",
+                                  "v1.13.x-SNAPSHOT/connectors/ingestion/workflows/metadata/filter-patterns/table"
                                 ]
                               },
                               {
@@ -5450,7 +5531,13 @@
                 "pages": [
                   "v1.13.x-SNAPSHOT/how-to-guides/mcp",
                   "v1.13.x-SNAPSHOT/how-to-guides/mcp/oauth",
-                  "v1.13.x-SNAPSHOT/how-to-guides/mcp/connect",
+                  {
+                    "group": "MCP Server Connection",
+                    "pages": [
+                      "v1.13.x-SNAPSHOT/how-to-guides/mcp/connect",
+                      "v1.13.x-SNAPSHOT/how-to-guides/mcp/connect-api"
+                    ]
+                  },
                   "v1.13.x-SNAPSHOT/how-to-guides/mcp/reference",
                   "v1.13.x-SNAPSHOT/how-to-guides/mcp/claude",
                   "v1.13.x-SNAPSHOT/how-to-guides/mcp/claude-code",
@@ -6168,7 +6255,13 @@
                 "pages": [
                   "v1.13.x-SNAPSHOT/api-reference/sdk",
                   "v1.13.x-SNAPSHOT/api-reference/sdk/openmetadata-standards",
-                  "v1.13.x-SNAPSHOT/api-reference/sdk/go",
+                  {
+                    "group": "Go SDK",
+                    "pages": [
+                      "v1.13.x-SNAPSHOT/api-reference/sdk/go",
+                      "v1.13.x-SNAPSHOT/api-reference/sdk/go-api-methods"
+                    ]
+                  },
                   {
                     "group": "Python",
                     "pages": [
@@ -6496,6 +6589,22 @@
     {
       "source": "/latest/:slug*",
       "destination": "/v1.12.x/:slug*"
+    },
+    {
+      "source": "/connectors/troubleshoot",
+      "destination": "/v1.12.x/connectors"
+    },
+    {
+      "source": "/v1.11.x/connectors/troubleshoot",
+      "destination": "/v1.11.x/connectors"
+    },
+    {
+      "source": "/v1.12.x/connectors/troubleshoot",
+      "destination": "/v1.12.x/connectors"
+    },
+    {
+      "source": "/v1.13.x-SNAPSHOT/connectors/troubleshoot",
+      "destination": "/v1.13.x-SNAPSHOT/connectors"
     },
     {
       "source": "/connectors/:slug*",
