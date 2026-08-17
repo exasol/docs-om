@@ -26,19 +26,45 @@ Configure and schedule Exasol metadata from the OpenMetadata UI:
 - [Troubleshooting](/v1.12.x/connectors/database/exasol/troubleshooting)
 
 ## Requirements
-The connector requires **Exasol version 7.1 or higher** to function correctly. Ensure your Exasol instance meets this minimum version requirement before proceeding.
-### Database Privilege Requirements
-To ingest basic metadata, an Exasol user must have the following privileges:
-  - `USAGE` privilege on Schema
-  - `SELECT` privilege on Tables
+Note that we support an Exasol database version 7.1 or later. Ensure your Exasol instance meets this minimum version requirement before proceeding.
 
-To use the lineage workflow, OpenMetadata fetches query logs by querying
-`EXA_STATISTICS.EXA_DBA_AUDIT_SQL` and joining
-`EXA_STATISTICS.EXA_DBA_AUDIT_SESSIONS`. To access these
-system tables, an Exasol user must have the `SELECT ANY DICTIONARY` system
-privilege, and auditing must be enabled on the database. For more information
-about Exasol auditing, see
+### Metadata
+To ingest basic metadata, an Exasol user must have the following privileges:
+  - `USAGE` privilege on the schema
+  - `SELECT` privilege on the tables
+
+For more information, see the [Exasol Privileges page](https://docs.exasol.com/db/latest/database_concepts/privileges.htm).
+
+Use the following SQL commands to grant these privileges to the OpenMetadata ingestion user:
+
+```sql
+GRANT USAGE ON <schema_name> TO <ingestion_username>;
+GRANT SELECT ON TABLE <schema_name>.<table_name> TO <ingestion_username>;
+```
+
+Alternatively, grant system privileges to allow access to all schemas and tables:
+
+```sql
+GRANT USE ANY SCHEMA TO <ingestion_username>;
+GRANT SELECT ANY TABLE TO <ingestion_username>;
+```
+<Tip>
+Use these broader privileges only when access to all schemas and tables is intended. `SELECT ANY TABLE` does not include system tables; the lineage workflow still requires `SELECT ANY DICTIONARY`.
+</Tip>
+
+### Lineage
+For the lineage workflow, OpenMetadata fetches query logs by querying `EXA_STATISTICS.EXA_DBA_AUDIT_SQL`
+and joining with `EXA_STATISTICS.EXA_DBA_AUDIT_SESSIONS`. To access these system tables, an
+Exasol user must have the `SELECT ANY DICTIONARY` system privilege, and auditing must be
+enabled on the database. For more information about Exasol auditing, see
 [Auditing](https://docs.exasol.com/db/latest/database_concepts/auditing.htm#Implementation).
+
+Grant the required system privilege to the OpenMetadata ingestion user:
+
+```sql
+GRANT SELECT ANY DICTIONARY TO <ingestion_username>;
+```
+
 ## Metadata Ingestion
 <MetadataIngestionUi connector={"Exasol"} selectServicePath={"/public/images/connectors/exasol/select-service.png"} addNewServicePath={"/public/images/connectors/exasol/add-new-service.png"} serviceConnectionPath={"/public/images/connectors/exasol/service-connection.png"} />
 # Connection Options
