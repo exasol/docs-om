@@ -20,31 +20,25 @@ stage="PROD"
 availableFeatures={["Metadata", "Lineage", "Column-level Lineage"]}
 unavailableFeatures={["Query Usage", "Data Profiler", "Data Quality", "Owners", "dbt", "Tags", "Stored Procedures", "Sample Data", "Auto-Classification"]} />
 In this section, we provide guides and references to use the Exasol connector.
+
 Configure and schedule Exasol metadata and profiler workflows from the OpenMetadata UI:
 - [Requirements](#requirements)
 - [Metadata Ingestion](#metadata-ingestion)
-- [Lineage](/connectors/ingestion/lineage)
+- [Lineage](/v1.12.x/connectors/ingestion/workflows/lineage)
+- [Troubleshooting](/v1.12.x/connectors/database/exasol/troubleshooting)
+
 <ExternalIngestionDeployment />
 ## Requirements
 ### Python Requirements
 <PythonRequirements />
 To run the Exasol ingestion, you will need to install:
 ```bash
-pip3 install "openmetadata-ingestion[Exasol]"
+pip3 install "openmetadata-ingestion[exasol]"
 ```
 
 ### Database Privilege Requirements
-To ingest basic metadata, an Exasol user must have the following privileges:
-  - `USAGE` privilege on Schema
-  - `SELECT` privilege on Tables
 
-To use the lineage workflow, OpenMetadata fetches query logs by querying
-`EXA_STATISTICS.EXA_DBA_AUDIT_SQL` and joining
-`EXA_STATISTICS.EXA_DBA_AUDIT_SESSIONS`. To access these
-system tables, an Exasol user must have the `SELECT ANY DICTIONARY` system
-privilege, and auditing must be enabled on the database. For more information
-about Exasol auditing, see
-[Auditing](https://docs.exasol.com/db/latest/database_concepts/auditing.htm#Implementation).
+For the required database privileges, see the [Requirements section of the Exasol connector documentation](/v1.12.x/connectors/database/exasol#requirements).
 
 ## Metadata Ingestion
 ### 1. Define the YAML Config
@@ -83,7 +77,7 @@ Configure the source type and service name for your Exasol connector.
 
 - **validate-certificate**: Uses Transport Layer Security (TLS) and validates the server certificate using system certificate stores.
 - **ignore-certificate**: Uses Transport Layer Security (TLS) but disables the validation of the server certificate. This should not be used in production. It can be useful during testing with self-signed certificates.
-- **disable-tls**: Does not use any Transport Layer Security (TLS). Data will be sent in plain text (no encryption). While this may be helpful in rare cases of debugging, make sure you do not use this in production.
+- **disable-tls**: Does not use any Transport Layer Security (TLS). Data will be sent in plain text (no encryption). While this may be helpful in rare cases of debugging, never use this in production.
 
 </ContentSection>
 
