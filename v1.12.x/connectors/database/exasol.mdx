@@ -18,14 +18,13 @@ stage="PROD"
 availableFeatures={["Metadata", "Lineage", "Column-level Lineage"]}
 unavailableFeatures={["Query Usage", "Data Profiler", "Data Quality", "Owners", "dbt", "Tags", "Stored Procedures", "Sample Data", "Auto-Classification"]} />
 In this section, we provide guides and references for using the Exasol connector.
+
 Configure and schedule Exasol metadata from the OpenMetadata UI:
 - [Requirements](#requirements)
 - [Metadata Ingestion](#metadata-ingestion)
+- [Lineage](/v1.12.x/connectors/ingestion/workflows/lineage)
 - [Troubleshooting](/v1.12.x/connectors/database/exasol/troubleshooting)
-<ExternalIngestionDeployment />
-<Card title="OpenMetadata 1.6.1 or later" href="/v1.12.x/deployment" >
-    To deploy OpenMetadata, check the Deployment guides.
-  </Card>
+
 ## Requirements
 The connector requires **Exasol version 7.1 or higher** to function correctly. Ensure your Exasol instance meets this minimum version requirement before proceeding.
 ### Database Privilege Requirements
