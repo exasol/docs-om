@@ -15,19 +15,21 @@ import { MetadataIngestionUi } from '/snippets/components/MetadataIngestionUi.js
 icon='/public/images/connectors/exasol.webp'
 name="Exasol"
 stage="PROD"
-availableFeatures={["Metadata", "Lineage", "Column-level Lineage"]}
-unavailableFeatures={["Query Usage", "Data Profiler", "Data Quality", "Owners", "dbt", "Tags", "Stored Procedures", "Sample Data", "Auto-Classification"]} />
+availableFeatures={["Metadata", "Lineage", "Column-level Lineage", "Query Usage"]}
+unavailableFeatures={["Data Profiler", "Data Quality", "Owners", "dbt", "Tags", "Stored Procedures", "Sample Data", "Auto-Classification"]} />
 In this section, we provide guides and references for using the Exasol connector.
-Configure and schedule Exasol metadata from the OpenMetadata UI:
+
+Configure and schedule Exasol metadata and other workflows from the OpenMetadata UI:
 - [Requirements](#requirements)
 - [Metadata Ingestion](#metadata-ingestion)
+- [Lineage](/v2.0.x-SNAPSHOT/connectors/ingestion/workflows/lineage)
+- [Query Usage](/v2.0.x-SNAPSHOT/connectors/ingestion/workflows/usage)
 - [Troubleshooting](/v2.0.x-SNAPSHOT/connectors/database/exasol/troubleshooting)
 <ExternalIngestionDeployment />
-<Card title="OpenMetadata 1.6.1 or later" href="/v2.0.x-SNAPSHOT/deployment" >
-    To deploy OpenMetadata, check the Deployment guides.
-  </Card>
+
 ## Requirements
 The connector requires **Exasol version 7.1 or higher** to function correctly. Ensure your Exasol instance meets this minimum version requirement before proceeding.
+
 ### Database Privilege Requirements
 To ingest basic metadata, an Exasol user must have the following privileges:
   - `USAGE` privilege on Schema
