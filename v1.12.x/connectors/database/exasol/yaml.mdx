@@ -129,9 +129,9 @@ source:
   serviceConnection:
     config:
       type: Exasol
-      username: username
-      password: password
-      hostPort: 127.0.0.1:8563  # format: host:port
+      username: username # REQUIRED
+      password: password # REQUIRED
+      hostPort: 127.0.0.1:8563  # REQUIRED - format: host:port
       SSL/TLS Settings: validate-certificate
       # connectionOptions:
       #   key: value
