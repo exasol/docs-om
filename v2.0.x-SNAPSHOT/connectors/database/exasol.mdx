@@ -45,14 +45,14 @@ GRANT USAGE ON <schema_name> TO <ingestion_username>;
 GRANT SELECT ON TABLE <schema_name>.<table_name> TO <ingestion_username>;
 ```
 
-Alternatively, grant system privileges to allow access to all schemas and tables:
+Alternatively, grant privileges to allow access to all schemas and tables:
 
 ```sql
 GRANT USE ANY SCHEMA TO <ingestion_username>;
 GRANT SELECT ANY TABLE TO <ingestion_username>;
 ```
 <Tip>
-Use these broader privileges only when access to all schemas and tables is intended. `SELECT ANY TABLE` does not include system tables; the lineage workflow still requires `SELECT ANY DICTIONARY`.
+Use these broader privileges only when access to all schemas and tables is intended. `SELECT ANY TABLE` does not include system tables; the lineage & query usage workflows still require `SELECT ANY DICTIONARY`.
 </Tip>
 
 ### Lineage & Query Usage
