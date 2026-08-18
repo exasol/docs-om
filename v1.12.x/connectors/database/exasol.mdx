@@ -81,11 +81,11 @@ GRANT SELECT ANY DICTIONARY TO <ingestion_username>;
   - **validate-certificate (Default)**: Enables Transport Layer Security (TLS) and validates the server certificate using system certificate stores.
   - **ignore-certificate**: Enables Transport Layer Security (TLS) but disables validation of the server certificate.
     <Tip>
-    This mode should not be used in production. It is useful for testing with self-signed certificates.
+    This mode should **never** be used in production. It is useful for testing with self-signed certificates.
     </Tip>
   - **disable-tls**: Disables Transport Layer Security (TLS). Data is sent in plain text (no encryption).
     <Tip>
-    This mode is **never** recommended for production and should only be used in debugging scenarios.
+    This mode should **never** be used in production and should only be used in debugging scenarios.
     </Tip>
 </Step>
 <AdvancedConfiguration />

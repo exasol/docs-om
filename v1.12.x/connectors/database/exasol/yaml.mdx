@@ -83,8 +83,8 @@ Configure the source type and service name for your Exasol connector.
 **SSL/TLS Settings**: Mode/setting for SSL validation:
 
 - **validate-certificate**: Uses Transport Layer Security (TLS) and validates the server certificate using system certificate stores.
-- **ignore-certificate**: Uses Transport Layer Security (TLS) but disables the validation of the server certificate. This should not be used in production. It can be useful during testing with self-signed certificates.
-- **disable-tls**: Does not use any Transport Layer Security (TLS). Data will be sent in plain text (no encryption). While this may be helpful in rare cases of debugging, never use this in production.
+- **ignore-certificate**: Uses Transport Layer Security (TLS) but disables the validation of the server certificate. This mode should **never** be used in production. It is useful for testing with self-signed certificates.
+- **disable-tls**: Does not use any Transport Layer Security (TLS). Data will be sent in plain text (no encryption). This mode should **never** be used in production and should only be used in debugging scenarios.
 
 </ContentSection>
 
