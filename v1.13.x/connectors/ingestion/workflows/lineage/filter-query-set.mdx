@@ -77,10 +77,6 @@ You can refer to [this bigquery documentation](https://cloud.google.com/bigquery
 For example if you want to add a condition to filter out queries executed by metabase client, i.e. the queries staring with `-- metabase %` then you can put the condition as `query NOT LIKE '--metabase %'`.
 
 
-
-
-
-
 ## MSSQL Filter Condition
 
 MSSQL reads query history from Query Store when it's enabled on a database, otherwise from the plan-cache DMVs. Your filter condition applies to whichever source is active for that database.

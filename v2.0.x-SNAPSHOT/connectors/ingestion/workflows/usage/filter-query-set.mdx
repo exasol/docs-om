@@ -76,8 +76,6 @@ WHERE creation_time BETWEEN "{start_time}" AND "{end_time}"
 You can refer to [this bigquery documentation](https://cloud.google.com/bigquery/docs/information-schema-jobs) to find out more about the JOBS_BY_PROJECT table.
 
 For example if you want to add a condition to filter out queries executed by metabase client, i.e. the queries staring with `-- metabase %` then you can put the condition as `query NOT LIKE '--metabase %'`.
-+
-
 
 
 ## MSSQL Filter Condition
@@ -272,7 +270,7 @@ WHERE user_id > 1
 You can refer to [this redshift documentation](https://docs.aws.amazon.com/redshift/latest/dg/SYS_QUERY_HISTORY.html) to find out more about the `SYS_QUERY_HISTORY` view.
 
 For example if you want to add a condition to filter out queries executed by metabase client, i.e. the queries staring with `-- metabase %` then you can put the condition as `query NOT LIKE '--metabase %'`.
-+
+
 
 ## Exasol Filter Condition
 
