@@ -56,7 +56,7 @@ Use these broader privileges only when access to all schemas and tables is inten
 </Tip>
 
 ### Lineage & Query Usage
-For the lineage & Query Usage workflows, OpenMetadata fetches query logs by querying
+For the lineage & query usage workflows, OpenMetadata fetches query logs by querying
 `EXA_STATISTICS.EXA_DBA_AUDIT_SQL` and joining with `EXA_STATISTICS.EXA_DBA_AUDIT_SESSIONS`.
 To access these system tables, an Exasol user must have the `SELECT ANY DICTIONARY` system
 privilege, and auditing must be enabled on the database. For more information about Exasol auditing, see
